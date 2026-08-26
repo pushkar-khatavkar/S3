@@ -45,7 +45,9 @@ cat << 'EOF' > index.html
 </body>
 </html>
 EOF
-
+```
+create a sample file
+```
 dd if=/dev/zero of=large-file.dat bs=1M count=25
 
 ```
