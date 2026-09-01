@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — CloudKida</title>
+    <meta name="description" content="CloudKida is a hands-on learning platform for AWS, DevOps and Linux labs." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a href="index.html" class="brand" aria-label="CloudKida home">
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 9.5a3.5 3.5 0 0 1 .5 6.98"
+                  stroke="#04121a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 12v6m0 0-2-2m2 2 2-2" stroke="#04121a" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            <span class="brand-name">Cloud<span>Kida</span></span>
+          </a>
+          <ul class="nav-links">
+            <li><a href="index.html#tracks">Learning Tracks</a></li>
+            <li><a href="index.html#labs">Popular Labs</a></li>
+            <li><a href="index.html#how">How It Works</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+          <a href="login.html" class="btn btn-primary">Start Learning</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow">About Us</span>
+          <h1>Learning cloud skills should be <span>hands-on</span></h1>
+          <p class="lead">
+            CloudKida is a learning platform built for practice, not just theory.
+            We give learners real, guided labs in live environments so they can build
+            genuine AWS, DevOps and Linux skills by doing the work themselves.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid">
+            <article class="card">
+              <div class="icon">🎯</div>
+              <h3>Our Mission</h3>
+              <p>Make practical cloud and DevOps skills accessible to every learner.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🧪</div>
+              <h3>Learn by Doing</h3>
+              <p>Every lab runs in a real, safe sandbox — no local setup required.</p>
+            </article>
+            <article class="card">
+              <div class="icon">📈</div>
+              <h3>Job-Ready Skills</h3>
+              <p>Guided tasks and instant validation build confidence that transfers to work.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title">
+            <h2>What you can learn</h2>
+            <p>Structured tracks that grow with you.</p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <div class="icon">☁️</div>
+              <h3>AWS</h3>
+              <p>Core services, security and architecture through real console and CLI labs.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🔧</div>
+              <h3>DevOps</h3>
+              <p>Docker, Kubernetes, Terraform, CI/CD and automation workflows.</p>
+            </article>
+            <article class="card">
+              <div class="icon">🐧</div>
+              <h3>Linux</h3>
+              <p>Command line fluency, scripting and system administration essentials.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="cta">
+          <h2>Start your first lab today</h2>
+          <p>Questions? Reach us at hello@cloudkida.com</p>
+          <a href="login.html" class="btn btn-primary">Start Learning</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          &copy; <span id="year"></span> CloudKida — cloudkida.com. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
