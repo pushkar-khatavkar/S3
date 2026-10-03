@@ -67,11 +67,11 @@ Leave everything else as-is and click **Create bucket**.
 Get the files onto your laptop — clone the repo:
 
 ```bash
-git clone https://github.com/pushkar-khatavkar/s3.git
-cd s3
+git clone https://github.com/pushkar-khatavkar/S3.git
+cd S3
 ```
 
-No git? Open [the repo](https://github.com/pushkar-khatavkar/s3) and use
+No git? Open [the repo](https://github.com/pushkar-khatavkar/S3) and use
 **Code → Download ZIP**, then unzip it.
 
 Now open your bucket in the console and click **Upload → Add files**. Select these files:
