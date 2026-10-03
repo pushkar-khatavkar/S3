@@ -1,5 +1,9 @@
 # Amazon S3 Masterclass: Complete Hands-On Lab Guide
 
+> Short on time? Start with the 15-minute booth lab in [`../README.md`](../README.md),
+> then come back here for the deep dive. This guide needs the AWS CLI configured locally;
+> the booth lab doesn't.
+
 ## Lab Overview
 
 | Item | Details |
