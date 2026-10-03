@@ -83,12 +83,23 @@ style.css    favicon.svg  s3-static-website.svg
 
 Click **Upload**, then **Close**. Your files are now in S3.
 
-### Step 3. Try to open index.html
+### Step 3. Open index.html from the console
 
-Click `index.html`, then click its **Object URL**.
+Click `index.html`, then click **Open** in the top-right corner.
 
-You'll get an **Access Denied** error. That's correct — S3 buckets are private by
-default. Stage 2 fixes that.
+The page opens in a new tab and renders — even though your bucket is completely private.
+Look at the address bar: it's a long URL ending in `X-Amz-Signature=...`. That's a
+**presigned URL**. The console just signed the request with *your* credentials so your
+browser could fetch a private object.
+
+Two things to notice, because they're the reason Stage 2 exists:
+
+- **The page looks unstyled.** Only `index.html` got signed. Your browser then went
+  looking for `style.css`, `favicon.svg`, and `s3-static-website.svg` at plain URLs with
+  no signature, and those are still private — so they never loaded.
+- **The URL is temporary and personal.** It expires, and it works because it carries your
+  permissions. It's great for sharing one private file with one person. It's not a way to
+  publish a website.
 
 ---
 
@@ -144,8 +155,11 @@ Paste the **Bucket website endpoint** from Step 4 into your browser:
 http://cloudkida-<your-name>.s3-website-us-east-1.amazonaws.com
 ```
 
-The CloudKida site loads, styled and clickable. Try a URL that doesn't exist to see
-`error.html` do its job.
+The site loads **fully styled** this time. Every file is public now, so the CSS and images
+load alongside the HTML — compare it with the bare page from Step 3. The URL is short,
+permanent, and needs no signature, so you can hand it to anyone.
+
+Try a path that doesn't exist, like `/nope`, to watch `error.html` do its job.
 
 **That's a website on AWS with zero servers.** Show it to us at the booth 👋
 
@@ -154,12 +168,16 @@ The CloudKida site loads, styled and clickable. Try a URL that doesn't exist to 
 ## What you just built
 
 ```text
-Browser ──► S3 Website Endpoint ──► your bucket
-                                      ├─ static website hosting (index + error docs)
-                                      └─ bucket policy (public s3:GetObject)
+Stage 1   You (signed in) ──► presigned URL ──► one private object, for a short while
+Stage 2   Anyone ──────────► S3 website endpoint ──► your bucket
+                                                      ├─ static website hosting (index + error docs)
+                                                      └─ bucket policy (public s3:GetObject)
 ```
 
-No EC2 instance, no web server to patch, no scaling to configure. S3 serves the files
+You saw the two ways to read from S3: **signed, temporary access** to a private object,
+and **public access** to a whole bucket. Websites need the second one.
+
+And no EC2 instance, no web server to patch, no scaling to configure. S3 serves the files
 and you pay only for storage and requests.
 
 ---
